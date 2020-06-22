@@ -1,21 +1,11 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import { Container, Button, Paper, Grid, InputBase } from '@material-ui/core';
+import { Button, Paper, Grid, InputBase } from '@material-ui/core';
 import twitter from '../images/twitter.png'
 
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import Cards from './Card';
 
 const useStyles = makeStyles((theme) => ({
@@ -92,7 +82,6 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         boxShadow: 'none',
         margin: '0px',
-        padding: theme.spacing(2),
 
     },
     bgcolor: {
@@ -115,44 +104,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Results() {
     const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-    const handleProfileMenuOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
-
-
-
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-        </Menu>
-    );
-
-
 
     return (
         <div className={classes.grow}>
@@ -162,7 +113,7 @@ function Results() {
 
                         <Paper className={classes.paper}>Tweet</Paper>
                         <Paper className={classes.paper}>
-                            <img src={twitter} height='30px' width='30px' />
+                            <img src={twitter} height='30px' width='30px' alt='' />
                         </Paper>
                         <Paper className={classes.paper}>Search</Paper>
                     </Grid>

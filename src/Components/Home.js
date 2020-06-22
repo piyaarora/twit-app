@@ -88,7 +88,7 @@ const Home = () => {
 
           <Paper className={classes.paper}>Tweet</Paper>
           <Paper className={classes.paper}>
-            <img src={twitter} height='40px' width='40px' />
+            <img src={twitter} height='40px' width='40px' alt='' />
           </Paper>
           <Paper className={classes.paper}>Search</Paper>
         </Grid>
